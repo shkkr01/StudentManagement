@@ -2,9 +2,9 @@
 
 A Student Management System serves as the backbone of educational institutions, offering a comprehensive suite of tools to administer, organize, and optimize student data. It provides seamless functionalities for adding, updating, and deleting student records, ensuring efficient and organized management within the institution.
 Tech Stack:
-Backend -- Java,SpringBoot
-Database -- SQL
-Frontend -- Thymeleaf,Html,BootStrap css4
+* Backend -- Java,SpringBoot
+* Database -- SQL
+* Frontend -- Thymeleaf,Html,BootStrap css4
 
 ## Description
 
