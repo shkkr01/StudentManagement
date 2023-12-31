@@ -55,7 +55,7 @@ Make sure you have chnaged the application.properties file with your sql server 
 Contributors names and contact info
 
 ex. Shubham Kumar  
-ex. [@shkProfile](www.linkedin.com/in/shubham-kumar-0383351b4)
+(www.linkedin.com/in/shubham-kumar-0383351b4)
 
 ## Version History
 
