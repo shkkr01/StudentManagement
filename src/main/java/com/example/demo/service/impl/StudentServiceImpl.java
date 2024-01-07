@@ -3,6 +3,9 @@ package com.example.demo.service.impl;
 import com.example.demo.entity.Student;
 import com.example.demo.repo.StudentRepo;
 import com.example.demo.service.StudentService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,5 +41,12 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void deleteStudentById(Long id) {
         studentRepo.deleteById(id);
+    }
+
+    @Override
+    public Page<Student> getEmpbyPage(int currentpage, int totalpage) {
+        Pageable pageable = PageRequest.of(currentpage,totalpage);
+
+        return studentRepo.findAll(pageable);
     }
 }

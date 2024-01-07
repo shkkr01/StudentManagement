@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Student;
 import com.example.demo.service.StudentService;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,8 @@ public class StudentController {
     @GetMapping("/students")
     @CrossOrigin
     public String listStudents(Model model) {
-        model.addAttribute("students", studentService.getAllStudents());
+       // model.addAttribute("students", studentService.getAllStudents());
+        getPaggination(0,model);
         return "students.html";
     }
 
@@ -62,6 +64,17 @@ public class StudentController {
         studentService.deleteStudentById(id);
         return "redirect:/students";
 
+
+    }
+    @GetMapping("/page/{pageno}")
+    public String getPaggination(@PathVariable int pageno,Model model){
+        Page<Student> emplist=studentService.getEmpbyPage(pageno,4);
+        model.addAttribute("students",emplist);
+        model.addAttribute("currentPage",pageno);
+        model.addAttribute("totalPage",emplist.getTotalPages());
+        model.addAttribute("totalItem",emplist.getTotalElements());
+
+        return "students.html";
 
     }
 
